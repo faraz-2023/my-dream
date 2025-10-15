@@ -12,7 +12,6 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    /* 🌈 Full-page animated gradient */
     body {
       background: linear-gradient(-45deg, #ff6600, #25d366, #417fcf, #ffcc00);
       background-size: 400% 400%;
@@ -28,14 +27,13 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* 🧭 Navbar */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 80px;
       position: fixed;
-      top: -80px; /* start hidden (slide-in effect) */
+      top: -80px;
       left: 0;
       width: 100%;
       z-index: 100;
@@ -43,17 +41,15 @@
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,0.2);
-      animation: slideDown 1s ease forwards;
+      animation: slideDown 3s ease forwards;
     }
 
     @keyframes slideDown {
-      to {
-        top: 0;
-      }
+      to { top: 0; }
     }
 
     header.scrolled {
-      background: rgba(32, 32, 57, 0.497); /* solid navy-like color */
+      background: rgba(32, 32, 57, 0.497);
       backdrop-filter: none;
       border-bottom: none;
     }
@@ -82,18 +78,31 @@
       gap: 30px;
     }
 
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-      transition: 0.3s;
+   nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    position: relative; /* ✅ add this line */
+    padding-bottom: 5px;
+    transition: 0.3s;
     }
 
-    nav ul li a:hover {
-      color: #ff6600;
-    }
+  nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #00ffff; /* Line color */
+  transition: width 0.3s ease;
+}
 
-    /* 🏠 Hero Section */
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+
     .hero {
       display: flex;
       justify-content: space-between;
@@ -138,57 +147,79 @@
       transition: 0.3s;
     }
 
-    .btn.call {
-      background: #ff6600;
-      color: white;
-    }
-
-    .btn.whatsapp {
-      background: #25d366;
-      color: white;
-    }
+    .btn.call { background: #ff6600; color: white; }
+    .btn.whatsapp { background: #25d366; color: white; }
 
     .btn:hover {
       opacity: 0.9;
       transform: scale(1.05);
     }
 
-    /* 🌠 Image Blend */
-    .image-wrapper img {
-      width: 450px;
-      max-width: 100%;
-      border-radius: 20px;
-      opacity: 0.9;
-      mix-blend-mode: screen;
-      animation: float 4s ease-in-out infinite;
-      transition: 0.5s;
+    /* 🌟 Services Section */
+    .services {
+      background: #fff;
+      color: #333;
+      padding: 100px 80px;
+      text-align: center;
     }
 
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
-      100% { transform: translateY(0px); }
+    .services h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #222;
     }
 
-    .image-wrapper img:hover {
-      transform: scale(1.05);
+    .services p {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      font-size: 17px;
+      color: #555;
+      line-height: 1.7;
     }
 
-    /* 📱 Responsive */
+    .service-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      text-align: left;
+    }
+
+    .service {
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .service img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 20px;
+    }
+
+    .service h3 {
+      color: #111;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.6;
+    }
+
     @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-      .buttons {
-        justify-content: center;
-      }
-      header {
-        padding: 15px 30px;
-      }
-      nav ul {
-        gap: 15px;
-      }
+      .hero { flex-direction: column; text-align: center; }
+      .buttons { justify-content: center; }
+      header { padding: 15px 30px; }
+      nav ul { gap: 15px; }
     }
   </style>
 </head>
@@ -199,7 +230,6 @@
       <img src="images/img1.png" alt="TechKey Logo">
       <h2>TechKey</h2>
     </div>
-
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -219,11 +249,47 @@
         <a href="https://wa.me/919876543210" class="btn whatsapp">💬 WhatsApp</a>
       </div>
     </div>
-    
+  </section>
+
+  <!-- 🧩 Services Section -->
+  <section class="services" id="services">
+    <h2>Here to Serve You</h2>
+    <p>We provide a full range of technology and design services to help your business stand out digitally and achieve its goals effectively.</p>
+
+    <div class="service-boxes">
+      <div class="service">
+        <img src="https://cdn-icons-png.flaticon.com/512/2721/2721269.png" alt="E-commerce">
+        <h3>E-Commerce Website Making</h3>
+        <p>We design and build e-commerce platforms with secure payment systems, easy navigation, and appealing UI to boost your online sales.</p>
+      </div>
+
+      <div class="service">
+        <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png" alt="Presentation">
+        <h3>Presentation Design</h3>
+        <p>We craft professional and visually engaging presentations that communicate your ideas with clarity and impact.</p>
+      </div>
+
+      <div class="service">
+        <img src="https://cdn-icons-png.flaticon.com/512/1162/1162485.png" alt="Logo Design">
+        <h3>Logo Design</h3>
+        <p>Our creative designers craft memorable logos that reflect your brand identity and make a lasting impression.</p>
+      </div>
+
+      <div class="service">
+        <img src="https://cdn-icons-png.flaticon.com/512/9068/9068645.png" alt="Digital Marketing">
+        <h3>Digital Marketing</h3>
+        <p>We help your business grow online with SEO, social media, and digital marketing strategies that deliver measurable results.</p>
+      </div>
+
+      <div class="service">
+        <img src="https://cdn-icons-png.flaticon.com/512/9068/9068635.png" alt="College Project">
+        <h3>College Project Development</h3>
+        <p>We assist students and professionals in developing innovative and technically strong projects tailored to academic or real-world needs.</p>
+      </div>
+    </div>
   </section>
 
   <script>
-    // 🌟 Change navbar when scrolling
     const navbar = document.getElementById("navbar");
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
