@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechKey Solutions</title>
+  <title>TecKey Solutions</title>
   <style>
     * {
       margin: 0;
@@ -26,6 +26,9 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
+    html {
+  scroll-behavior: smooth;
+   }
 
     header {
       display: flex;
@@ -61,8 +64,8 @@
     }
 
     .logo img {
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
     }
 
@@ -214,6 +217,86 @@ nav ul li a:hover::after {
       color: #555;
       line-height: 1.6;
     }
+    footer {
+    background: #000;
+    color: #fff;
+    padding: 40px 0 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: left;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .footer-container div {
+    flex: 1 1 250px;
+    margin: 10px;
+  }
+
+  .footer-about h2 {
+    color: #00bfff;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links ul li {
+    margin: 8px 0;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+  }
+
+  .footer-links a:hover {
+    color: #00bfff;
+  }
+
+  .footer-contact a {
+    color: #00bfff;
+    text-decoration: none;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+  }
+
+  .social-icons a img {
+    width: 25px;
+    margin-right: 10px;
+    transition: 0.3s;
+  }
+
+  .social-icons a img:hover {
+    transform: scale(1.2);
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
 
     @media (max-width: 900px) {
       .hero { flex-direction: column; text-align: center; }
@@ -228,7 +311,7 @@ nav ul li a:hover::after {
   <header id="navbar">
     <div class="logo">
       <img src="images/img1.png" alt="TechKey Logo">
-      <h2>TechKey</h2>
+      <h2>TecKey</h2>
     </div>
     <nav>
       <ul>
@@ -243,7 +326,7 @@ nav ul li a:hover::after {
   <section class="hero" id="home">
     <div class="hero-text">
       <h1>Build an Amazing Digital Product</h1>
-      <p>Create outstanding digital experiences with <b>TechKey</b> — your trusted technology partner for web, mobile, and AI solutions.</p>
+      <p>Create outstanding digital experiences with <b>TecKey</b> — your trusted technology partner for web, mobile, and AI solutions.</p>
       <div class="buttons">
         <a href="tel:+919876543210" class="btn call">📞 Call Now</a>
         <a href="https://wa.me/919876543210" class="btn whatsapp">💬 WhatsApp</a>
@@ -287,6 +370,13 @@ nav ul li a:hover::after {
         <h3>College Project Development</h3>
         <p>We assist students and professionals in developing innovative and technically strong projects tailored to academic or real-world needs.</p>
       </div>
+
+      <div class="service">
+  <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" alt="UI UX Design">
+  <h3>UI/UX Design</h3>
+  <p>We create intuitive and visually appealing user interfaces focused on smooth, engaging, and meaningful user experiences across all platforms.</p>
+</div>
+
     </div>
   </section>
   
@@ -298,6 +388,76 @@ nav ul li a:hover::after {
   </p>
   <div id="projects-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;"></div>
 </section>
+<!--contact-->
+<section class="contact" id="contact" style="padding: 100px 80px; background: #222; color: #fff; text-align: center;">
+  <h2 style="font-size: 36px; font-weight: 700; margin-bottom: 10px;">Contact Us</h2>
+  <p style="max-width: 800px; margin: 0 auto 60px; font-size: 17px; line-height: 1.7; color: #ccc;">
+    Send us a message and let’s discuss how we can help you.
+  </p>
+
+  <form id="contactForm" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+    <select id="serviceType" required style="padding: 12px 15px; border-radius: 8px; border: none; font-size: 16px;">
+      <option value="">Select Service</option>
+      <option value="E-Commerce Website">E-Commerce Website</option>
+      <option value="Presentation Design">Presentation Design</option>
+      <option value="Logo Design">Logo Design</option>
+      <option value="Digital Marketing">Digital Marketing</option>
+      <option value="College Project Development">College Project Development</option>
+    </select>
+
+    <input type="text" id="name" placeholder="Your Name" required style="padding: 12px 15px; border-radius: 8px; border: none; font-size: 16px;">
+    <input type="email" id="email" placeholder="Your Email" required style="padding: 12px 15px; border-radius: 8px; border: none; font-size: 16px;">
+    <textarea id="message" placeholder="Your Message" required rows="5" style="padding: 12px 15px; border-radius: 8px; border: none; font-size: 16px;"></textarea>
+
+    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+      <!-- Send via Email -->
+      <button type="button" onclick="sendEmail()" style="padding: 12px 25px; border-radius: 50px; border: none; font-size: 16px; font-weight: 600; background: #ff6600; color: white; cursor: pointer;">
+        📧 Send Email
+      </button>
+
+      <!-- Send via WhatsApp -->
+      <button type="button" onclick="sendWhatsApp()" style="padding: 12px 25px; border-radius: 50px; border: none; font-size: 16px; font-weight: 600; background: #25d366; color: white; cursor: pointer;">
+        💬 WhatsApp
+      </button>
+    </div>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-about">
+      <h2>TecKey Solutions</h2>
+      <p>Empowering your business with smart digital solutions — from web development to AI-driven innovation.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Our Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:teckeysolutions@gmail.com">teckeysolutions@gmail.com</a></p>
+      <p>Phone: +91 98765 43210</p>
+      <div class="social-icons">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="LinkedIn"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="GitHub"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 TecKey Solutions | All Rights Reserved.</p>
+  </div>
+</footer>
+
 
 
   <script>
@@ -364,6 +524,42 @@ nav ul li a:hover::after {
     `;
     container.appendChild(projectCard);
   });
+</script>
+
+<script>
+  // 📧 Send via Email
+  function sendEmail() {
+    const service = document.getElementById('serviceType').value;
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    if(!service || !name || !email || !message) {
+      alert("Please fill all fields!");
+      return;
+    }
+
+    const subject = encodeURIComponent(`Inquiry: ${service}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage:\n${message}`);
+    window.open(`mailto:your-email@example.com?subject=${subject}&body=${body}`);
+  }
+
+  // 💬 Send via WhatsApp
+  function sendWhatsApp() {
+    const service = document.getElementById('serviceType').value;
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    if(!service || !name || !email || !message) {
+      alert("Please fill all fields!");
+      return;
+    }
+
+    const waMessage = encodeURIComponent(`Hello, I want to inquire about: ${service}\nName: ${name}\nEmail: ${email}\nMessage:\n${message}`);
+    const phoneNumber = "919876543210"; // Replace with your WhatsApp number
+    window.open(`https://wa.me/${phoneNumber}?text=${waMessage}`, "_blank");
+  }
 </script>
 
 
