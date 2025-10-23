@@ -219,11 +219,144 @@ nav ul li a:hover::after {
       padding: 30px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+   /* Service Card */
+.service {
+  position: relative;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 30px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 0;
+}
 
-    .service:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
+.service::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(45deg, #ff6600, #25d366, #417fcf, #ffcc00);
+  background-size: 300% 300%;
+  animation: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  z-index: -1;
+}
+
+.service:hover::before {
+  animation: borderFlow 3s linear infinite;
+  opacity: 1;
+}
+
+.service:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* 🌈 PROJECT CARD */
+.project-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 0;
+  background: linear-gradient(135deg, #ffffff, #f8f8f8);
+}
+
+/* Subtle animated background inside the card */
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255,102,0,0.05), rgba(65,127,207,0.05), rgba(37,211,102,0.05));
+  background-size: 200% 200%;
+  animation: none;
+  z-index: 0;
+  transition: opacity 0.4s ease;
+  opacity: 0;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(45deg, #ff6600, #25d366, #417fcf, #ffcc00);
+  background-size: 300% 300%;
+  animation: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  z-index: 1;
+}
+
+.project-card:hover::before {
+  animation: borderFlow 3s linear infinite;
+  opacity: 1;
+}
+
+.project-card:hover::after {
+  animation: bgShift 5s linear infinite;
+  opacity: 1;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 💫 Animations */
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Project Content Styling */
+.project-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.project-card-content {
+  position: relative;
+  padding: 15px;
+  z-index: 2;
+}
+
+.project-card-content h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #222;
+}
+
+.project-card-content p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
+}
+
 
     .service img {
       width: 60px;
@@ -359,7 +492,7 @@ nav ul li a:hover::after {
     </div>
   </div>
   <div class="hero-image animate-right">
-    <img src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif" alt="Digital Product" />
+    <img src="images/img3.png" alt="Digital Product" />
   </div>
 </section>
 
@@ -503,57 +636,46 @@ nav ul li a:hover::after {
 
   <script>
   // Array of projects
-  const projects = [
-    {
-      title: "E-Commerce Website",
-      description: "Built a fully functional e-commerce platform with payment integration and responsive design.",
-      image: "https://via.placeholder.com/300x200"
-    },
-    {
-      title: "Portfolio Website",
-      description: "Designed a sleek personal portfolio website showcasing projects and skills.",
-      image: "https://via.placeholder.com/300x200"
-    },
-    {
-      title: "College Project",
-      description: "Developed a college project app with Python and Django for academic submission.",
-      image: "https://via.placeholder.com/300x200"
-    },
-    {
-      title: "Logo Design",
-      description: "Created a set of modern and creative logos for clients across different industries.",
-      image: "https://via.placeholder.com/300x200"
-    }
-    // Add more projects here
-  ];
+ const projects = [
+  {
+    title: "E-Commerce Website",
+    description: "Built a fully functional e-commerce platform with payment integration and responsive design.",
+    image: "https://via.placeholder.com/300x200"
+  },
+  {
+    title: "Portfolio Website",
+    description: "Designed a sleek personal portfolio website showcasing projects and skills.",
+    image: "https://via.placeholder.com/300x200"
+  },
+  {
+    title: "College Project",
+    description: "Developed a college project app with Python and Django for academic submission.",
+    image: "https://via.placeholder.com/300x200"
+  },
+  {
+    title: "Logo Design",
+    description: "Created a set of modern and creative logos for clients across different industries.",
+    image: "https://via.placeholder.com/300x200"
+  }
+];
 
-  const container = document.getElementById("projects-container");
+const container = document.getElementById("projects-container");
 
-  projects.forEach(project => {
-    const projectCard = document.createElement("div");
-    projectCard.style.border = "1px solid #ccc";
-    projectCard.style.borderRadius = "12px";
-    projectCard.style.overflow = "hidden";
-    projectCard.style.background = "#fff";
-    projectCard.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
-    projectCard.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
-    projectCard.onmouseover = () => {
-      projectCard.style.transform = "translateY(-8px)";
-      projectCard.style.boxShadow = "0 12px 24px rgba(0,0,0,0.15)";
-    };
-    projectCard.onmouseout = () => {
-      projectCard.style.transform = "translateY(0)";
-      projectCard.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
-    };
-    projectCard.innerHTML = `
-      <img src="${project.image}" alt="${project.title}" style="width:100%; height: 160px; object-fit: cover;">
-      <div style="padding: 15px;">
-        <h3 style="margin-bottom: 10px;">${project.title}</h3>
-        <p style="font-size: 15px; color: #555;">${project.description}</p>
-      </div>
-    `;
-    container.appendChild(projectCard);
-  });
+projects.forEach(project => {
+  const projectCard = document.createElement("div");
+  projectCard.className = "project-card"; // ✅ apply CSS animations
+  
+  projectCard.innerHTML = `
+    <img src="${project.image}" alt="${project.title}">
+    <div class="project-card-content">
+      <h3>${project.title}</h3>
+      <p>${project.description}</p>
+    </div>
+  `;
+  
+  container.appendChild(projectCard);
+});
+
 </script>
 
 <script>
