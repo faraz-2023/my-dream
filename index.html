@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TecKey Solutions</title>
+  <title>DevcodrX Solutions</title>
   <style>
     * {
       margin: 0;
@@ -14,7 +14,7 @@
 
     body {
       background: linear-gradient(-45deg, #ff6600, #25d366, #417fcf, #ffcc00);
-      background-size: 400% 400%;
+      background-size: 200% 200%;
       animation: gradientMove 10s ease infinite;
       color: #fff;
       min-height: 100vh;
@@ -41,10 +41,15 @@
       width: 100%;
       z-index: 100;
       transition: background 0.4s ease, top 0.8s ease;
-      background: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,0.2);
       animation: slideDown 3s ease forwards;
+      header {
+  background-color: rgba(255,255,255,0.2);
+  -webkit-backdrop-filter: blur(10px);
+}
+
     }
 
     @keyframes slideDown {
@@ -60,7 +65,7 @@
   font-size: 42px;
   font-weight: 800;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(90deg, #05333f, #007bff, #6a11cb, #020a17);
+  background: linear-gradient(90deg, #05333f, #007bff, #190232, #020a17);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-transform: none;
@@ -128,7 +133,7 @@ nav ul li a:hover::after {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 140px 80px 60px;
+  padding: 140px 120px 60px;
   flex-wrap: wrap;
   color: #fff;
   overflow: hidden;
@@ -213,12 +218,6 @@ nav ul li a:hover::after {
       text-align: left;
     }
 
-    .service {
-      background: #f9f9f9;
-      border-radius: 12px;
-      padding: 30px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
    /* Service Card */
 .service {
   position: relative;
@@ -448,28 +447,16 @@ nav ul li a:hover::after {
     margin-top: 20px;
   }
 
-  @media (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  }
-
-    @media (max-width: 900px) {
-      .hero { flex-direction: column; text-align: center; }
-      .buttons { justify-content: center; }
-      header { padding: 15px 30px; }
-      nav ul { gap: 15px; }
-    }
+    @media (max-width: 900px) { .hero { flex-direction: column; text-align: center; } .buttons { justify-content: center; } header { padding: 15px 30px; } nav ul { gap: 15px; } }
+    @media (max-width: 768px) { .footer-container { flex-direction: column; align-items:center; text-align:center; } }
   </style>
 </head>
 <body>
 
   <header id="navbar">
     <div class="logo">
-      <img src="images/img1.png" alt="TechKey Logo">
-      <h2  class="logo-glow">DevcoderX</h2>
+      <img src="images/img1.png" alt="Devcodrx Logo">
+      <h2  class="logo-glow">DevcodrX</h2>
     </div>
     <nav>
       <ul>
@@ -509,6 +496,18 @@ nav ul li a:hover::after {
         <h3>E-Commerce Website Making</h3>
         <p>We design and build e-commerce platforms with secure payment systems, easy navigation, and appealing UI to boost your online sales.</p>
       </div>
+    
+       <div class="service">
+  <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" alt="UI UX Design">
+  <h3>UI/UX Design</h3>
+  <p>We create intuitive and visually appealing user interfaces focused on smooth, engaging, and meaningful user experiences across all platforms.</p>
+</div>
+
+<div class="service">
+        <img src="https://cdn-icons-png.flaticon.com/512/1162/1162485.png" alt="Logo Design">
+        <h3>Logo Design</h3>
+        <p>Our creative designers craft memorable logos that reflect your brand identity and make a lasting impression.</p>
+      </div>
 
       <div class="service">
         <img src="https://cdn-icons-png.flaticon.com/512/1048/1048953.png" alt="Presentation">
@@ -516,11 +515,13 @@ nav ul li a:hover::after {
         <p>We craft professional and visually engaging presentations that communicate your ideas with clarity and impact.</p>
       </div>
 
-      <div class="service">
-        <img src="https://cdn-icons-png.flaticon.com/512/1162/1162485.png" alt="Logo Design">
-        <h3>Logo Design</h3>
-        <p>Our creative designers craft memorable logos that reflect your brand identity and make a lasting impression.</p>
+        <div class="service">
+        <img src="https://cdn-icons-png.flaticon.com/512/9068/9068635.png" alt="College Project">
+        <h3>College Project Development</h3>
+        <p>We assist students and professionals in developing innovative and technically strong projects tailored to academic or real-world needs.</p>
       </div>
+
+      
 
       <div class="service">
         <img src="https://cdn-icons-png.flaticon.com/512/9068/9068645.png" alt="Digital Marketing">
@@ -528,18 +529,9 @@ nav ul li a:hover::after {
         <p>We help your business grow online with SEO, social media, and digital marketing strategies that deliver measurable results.</p>
       </div>
 
-      <div class="service">
-        <img src="https://cdn-icons-png.flaticon.com/512/9068/9068635.png" alt="College Project">
-        <h3>College Project Development</h3>
-        <p>We assist students and professionals in developing innovative and technically strong projects tailored to academic or real-world needs.</p>
-      </div>
+    
 
-      <div class="service">
-  <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" alt="UI UX Design">
-  <h3>UI/UX Design</h3>
-  <p>We create intuitive and visually appealing user interfaces focused on smooth, engaging, and meaningful user experiences across all platforms.</p>
-</div>
-
+     
     </div>
   </section>
   
@@ -589,7 +581,7 @@ nav ul li a:hover::after {
 <footer>
   <div class="footer-container">
     <div class="footer-about">
-      <h2>TecKey Solutions</h2>
+      <h2>DevcodrX Solutions</h2>
       <p>Empowering your business with smart digital solutions — from web development to AI-driven innovation.</p>
     </div>
 
@@ -606,7 +598,7 @@ nav ul li a:hover::after {
     <div class="footer-contact">
       <h3>Contact Us</h3>
       <p>Email: <a href="mailto:teckeysolutions@gmail.com">devcodrXsolutions@gmail.com</a></p>
-      <p>Phone: +91 98765 43210</p>
+      <p>Phone: +91 8603778367</p>
       <div class="social-icons">
         <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
         <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
@@ -693,7 +685,7 @@ projects.forEach(project => {
 
     const subject = encodeURIComponent(`Inquiry: ${service}`);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage:\n${message}`);
-    window.open(`mailto:your-email@example.com?subject=${subject}&body=${body}`);
+    window.open(`mailto:farazakram2024@gmail.com?subject=${subject}&body=${body}`);
   }
 
   // 💬 Send via WhatsApp
@@ -709,7 +701,7 @@ projects.forEach(project => {
     }
 
     const waMessage = encodeURIComponent(`Hello, I want to inquire about: ${service}\nName: ${name}\nEmail: ${email}\nMessage:\n${message}`);
-    const phoneNumber = "919876543210"; // Replace with your WhatsApp number
+    const phoneNumber = "918603778367"; // Replace with your WhatsApp number
     window.open(`https://wa.me/${phoneNumber}?text=${waMessage}`, "_blank");
   }
 </script>
